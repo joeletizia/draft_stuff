@@ -26,7 +26,10 @@ module BaseballPlayerPresentation
   module_function
 
   def name_brief(player)
+    first_name = player.first_name
+    last_name = player.last_name
 
+    "#{first_name[0]}.#{last_name[0]}."
   end
 end
 
@@ -34,7 +37,10 @@ module FootballPlayerPresentation
   module_function
 
   def name_brief(player)
+    first_name = player.first_name
+    last_name = player.last_name
 
+    "#{first_name[0]}. #{last_name}"
   end
 end
 
@@ -42,6 +48,9 @@ module BasketballPlayerPresentation
   module_function
 
   def name_brief(player)
+    first_name = player.first_name
+    last_name = player.last_name
 
+    "#{first_name} #{last_name[0]}."
   end
 end

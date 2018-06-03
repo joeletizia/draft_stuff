@@ -22,7 +22,15 @@ module FakePlayersAPI
   module_function
 
   def get_players_data(sport)
-    player = {first_name: 'Joe', last_name: 'Letizia', age: 33, position: "RF", sport: sport}
+    player = {'firstname' => 'Joe', 'lastname' => 'Letizia', 'age' => 33, 'position' => position_for_sport(sport), 'sport' => sport}
     [player]
+  end
+
+  def position_for_sport(sport)
+    {
+      "baseball" => "RF",
+      "basketball" => "C",
+      "football" => "QB",
+    }[sport]
   end
 end
