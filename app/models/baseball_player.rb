@@ -1,3 +1,0 @@
-class BaseballPlayer < ApplicationRecord
-
-end
