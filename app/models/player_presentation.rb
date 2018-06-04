@@ -10,6 +10,7 @@ module PlayerPresentation
       position: player.position,
       age: player.age,
       name_brief: presenter.name_brief(player),
+      average_position_age_diff: Analytics::Age.difference_between_player_and_average(player)
     }
   end
 
