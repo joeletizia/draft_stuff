@@ -26,8 +26,3 @@ I have a functional programming style. I find it easier to read in 99% of scenar
 ### Calculating average ages
 The answer here depends on how often new players come into and out of our data set. If it was frequent, I'd set up some kind of message bus and push entry and exit messages across it to constantly keep our average up to date. Or maybe I'd use a cron job if we can deal with some inconsitency.
 
-### Fetching the average age difference on a per player basis
-When fetching `/sports/:sport` I do a DB call for every single player to get the average age for their position. This is a bit inefficinet since I could load them all up in one query way ahead of time. But since the request STILL only takes 2 seconds, I skipped it. Over optimization. If we really need to do that, it would be trivial.
-
-
-

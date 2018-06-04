@@ -1,5 +1,6 @@
 module Analytics::Age
   module_function
+  @@memoized_averages = AverageAge.all
 
   def calculate_and_persist_average_position_ages()
     averages = calculate_average_position_ages()
@@ -50,7 +51,7 @@ module Analytics::Age
     sport = player.sport
     position = player.position
 
-    average = AverageAge.where(position: position, sport: sport).first
+    average = @@memoized_averages.find{|average| average.sport == sport && average.position == position}
     player.age - average.age
   end
 end
