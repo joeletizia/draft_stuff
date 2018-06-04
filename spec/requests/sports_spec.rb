@@ -8,6 +8,7 @@ describe "Sports API endpoint" do
       player_3 = Player.create(first_name: "Angie", last_name: "Letizia", position: "DH", age: 2, sport: "baseball")
       player_4 = Player.create(first_name: "Mike", last_name: "Letizia", position: "LF", age: 65, sport: "baseball")
       player_5 = Player.create(first_name: "Kevin", last_name: "Letizia", position: "C", age: 31, sport: "basketball")
+      Analytics::Age.calculate_and_persist_average_position_ages()
 
       get "/sports/baseball"
       expect(response.content_type).to eq("application/json")
