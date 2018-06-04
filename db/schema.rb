@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_03_175517) do
+ActiveRecord::Schema.define(version: 2018_06_04_010518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "average_ages", force: :cascade do |t|
+    t.text "sport"
+    t.text "position"
+    t.float "age"
+  end
 
   create_table "players", force: :cascade do |t|
     t.text "first_name"
