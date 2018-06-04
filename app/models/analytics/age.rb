@@ -43,6 +43,10 @@ module Analytics::Age
   end
 
   def difference_between_player_and_average(player)
+    if(player.age.nil?)
+      return "...player doesn't have an age?"
+    end
+
     sport = player.sport
     position = player.position
 

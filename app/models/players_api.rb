@@ -13,7 +13,7 @@ module PlayersAPI
 
   def filter_out_non_players(objects)
     objects.reject do |object|
-      object["firstname"].nil? || object["lastname"].nil?
+      object["firstname"].blank? || object["lastname"].blank?
     end
   end
 
